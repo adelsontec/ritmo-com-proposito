@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [agua, setAgua] = useState(0);
@@ -64,16 +65,26 @@ useEffect(() => {
         “Ensina-nos a contar os nossos dias, de tal maneira que alcancemos corações sábios.” – Salmos 90:12
       </p>
 
-      <section className="mb-6 p-4 bg-white rounded shadow">
-        <h2 className="text-xl font-semibold mb-2">💧 Hidratação</h2>
-        <p>Copos de água tomados hoje: <strong>{agua}</strong></p>
-        <button
-          onClick={tomarAgua}
-          className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Registrar copo de água
-        </button>
-      </section>
+   <section className="mb-6 p-4 bg-white rounded shadow">
+  <h2 className="text-xl font-semibold mb-2">💧 Hidratação</h2>
+  <p>Copos de água tomados hoje: <strong>{agua}</strong></p>
+  <button
+    onClick={tomarAgua}
+    className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+  >
+    Registrar copo de água
+  </button>
+
+  <div className="mt-4">
+    <Link href="/plano-hidratacao" className="text-blue-600 underline mr-4">
+      📘 Plano de Hidratação
+    </Link>
+    <Link href="/informacoes-hidratacao" className="text-blue-600 underline">
+      ℹ️ Saiba Mais
+    </Link>
+  </div>
+</section>
+
 
       <section className="mb-6 p-4 bg-white rounded shadow">
         <h2 className="text-xl font-semibold mb-2">💊 Remédios</h2>
